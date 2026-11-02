@@ -70,5 +70,5 @@ python main.py
 ## Используемые технологии
 
 - Python
-- pandas
+- pandasпше фвв
 - Git
