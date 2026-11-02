@@ -17,3 +17,11 @@ class DataFrameReporter:
 
         duplicate_share = duplicates / df.shape[0] if df.shape[0] else 0
         print('Доля дубликатов:', format(duplicate_share, self.percent_format))
+
+        print(df.describe(include='all' if self.include_all else None))
+
+        missing_count = df.isna().sum().sum()
+        missing_share = missing_count / df.size if df.size else 0
+
+        print('Количество пропусков:', missing_count)
+        print('Доля пропусков:', format(missing_share, self.float_format))
